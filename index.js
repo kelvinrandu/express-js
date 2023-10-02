@@ -10,7 +10,9 @@ app.use(express.json());
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
-
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
 const io = socket(server, {
   cors: {
     origin: "*",
